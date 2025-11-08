@@ -37,11 +37,12 @@
                 <h:dataTable value="#{usuario.pagos}" var="pago">
                     <h:column>
                         <f:facet name="header">Mes</f:facet>
-                        #{pago.key}
+                        <h:outputText value="#{pago.key}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">Pago</f:facet>
-                        #{pago.value}
+                        <h:outputText value="#{pago.value} €" rendered="#{pago.value ne null}" />
+                        <h:outputText value="NO PAGADO" rendered="#{pago.value eq null}" />
                     </h:column>
                 </h:dataTable>
             </li>
