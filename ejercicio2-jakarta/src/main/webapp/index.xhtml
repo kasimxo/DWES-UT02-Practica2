@@ -20,14 +20,33 @@
           puedes usar un bucle ui:repeat y variables, o crear una función dentro del objeto que calcule el total. 
 
    -->
-    <ul>
-        <ui:repeat value="#{helloBean.usuarios}" var="usuario">
+   <ui:repeat value="#{helloBean.usuarios}" var="usuario">
+       <h2>Usuario: #{usuario.nombre} #{usuario.apellidos}</h2>
+        <ul>
             <li>
-                #{usuario.nombre} #{usuario.apellidos}
-                <!-- Condicional dentro del bucle -->
+                Dni: #{usuario.dni}
             </li>
-        </ui:repeat>
-    </ul>
+            <li>
+                Email: #{usuario.email}
+            </li>
+            <li>
+                Edad: #{usuario.edad}
+            </li>
+            <li>
+                Pagos:
+                <h:dataTable value="#{usuario.pagos}" var="pago">
+                    <h:column>
+                        <f:facet name="header">Mes</f:facet>
+                        #{pago.key}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Pago</f:facet>
+                        #{pago.value}
+                    </h:column>
+                </h:dataTable>
+            </li>
+        </ul>
+    </ui:repeat>
 
 </h:body>
 </html>

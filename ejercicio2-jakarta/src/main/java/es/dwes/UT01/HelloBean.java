@@ -14,48 +14,48 @@ public class HelloBean implements Serializable {
 
     private List<Usuario> usuarios = List.of(
             new Usuario("Homer", "Simpson", "11111111A", "homer@yahoo.com", 45, new HashMap<String, Double>(){{
-                put("enero", 0.0);
-                put("febrero", 0.0);
-                put("marzo", 0.0);
-                put("abril", 0.0);
-                put("mayo", 0.0);
-                put("junio", 0.0);
-                put("julio", 0.0);
-                put("agosto", 0.0);
-                put("septiembre", 0.0);
-                put("octubre", 0.0);
-                put("noviembre", 0.0);
-                put("diciembre", 0.0);
+                put("enero", 1.0);
+                put("febrero", 2.8);
+                put("marzo", 19.2);
+                put("abril", 76.0);
+                put("mayo", 2.0);
+                put("junio", 29.0);
+                put("julio", 3.2);
+                put("agosto", 15.4);
+                put("septiembre", 52.4);
+                put("octubre", null);
+                put("noviembre", 13.1);
+                put("diciembre", 9.0);
             }}),
             new Usuario("Marge", "Simpson", "11111111B", "marge@yahoo.com", 44,  new HashMap<String, Double>(){{
-                put("enero", 0.0);
-                put("febrero", 0.0);
-                put("marzo", 0.0);
-                put("abril", 0.0);
-                put("mayo", 0.0);
-                put("junio", 0.0);
-                put("julio", 0.0);
-                put("agosto", 0.0);
-                put("septiembre", 0.0);
-                put("octubre", 0.0);
-                put("noviembre", 0.0);
-                put("diciembre", 0.0);
+                put("enero", 1.0);
+                put("febrero", null);
+                put("marzo", 19.2);
+                put("abril", null);
+                put("mayo", 2.0);
+                put("junio", 29.0);
+                put("julio", 3.2);
+                put("agosto", 15.4);
+                put("septiembre", 52.4);
+                put("octubre", 22.6);
+                put("noviembre", 13.1);
+                put("diciembre", null);
             }}),
-            new Usuario("Bart", "Simpson", "11111111C", "lisa@yahoo.com", 10, new HashMap<String, Double>(){{
-                put("enero", 0.0);
-                put("febrero", 0.0);
-                put("marzo", 0.0);
-                put("abril", 0.0);
-                put("mayo", 0.0);
-                put("junio", 0.0);
-                put("julio", 0.0);
-                put("agosto", 0.0);
-                put("septiembre", 0.0);
-                put("octubre", 0.0);
-                put("noviembre", 0.0);
-                put("diciembre", 0.0);
+            new Usuario("Bart", "Simpson", "11111111C", "bart@yahoo.com", 10, new HashMap<String, Double>(){{
+                put("enero", 1.0);
+                put("febrero", 2.8);
+                put("marzo", 19.2);
+                put("abril", 76.0);
+                put("mayo", 2.0);
+                put("junio", 29.0);
+                put("julio", 3.2);
+                put("agosto", 15.4);
+                put("septiembre", 52.4);
+                put("octubre", 22.6);
+                put("noviembre", 13.1);
+                put("diciembre", 9.0);
             }}),
-            new Usuario("Lisa", "Simpson", "11111111D", "bart@yahoo.com", 9,  new HashMap<String, Double>(){{
+            new Usuario("Lisa", "Simpson", "11111111D", "lisa@yahoo.com", 9,  new HashMap<String, Double>(){{
                 put("enero", 1.0);
                 put("febrero", 2.8);
                 put("marzo", null);
