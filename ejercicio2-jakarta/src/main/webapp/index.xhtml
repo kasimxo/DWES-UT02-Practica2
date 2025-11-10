@@ -12,16 +12,8 @@
 
 <h:body>
     <h1>Lista de usuarios:</h1>
- <!-- Práctica 2: 
-        * Añade aquí la sección para mostrar la lista de usuarios.
-        * Comprueba si quieres primero que se muestra uno y después genera a todos.
-        * Estudia como se publican aquí los elementos de un objeto dentro de una clase.
-        * Utiliza la aproximación que prefieras para gestionar el total de pagos del usuario. por ejemplo, 
-          puedes usar un bucle ui:repeat y variables, o crear una función dentro del objeto que calcule el total. 
-
-   -->
-   <ui:repeat value="#{helloBean.usuarios}" var="usuario">
-       <h2>Usuario: #{usuario.nombre} #{usuario.apellidos}</h2>
+    <ui:repeat value="#{helloBean.usuarios}" var="usuario">
+        <h2>Usuario: #{usuario.nombre} #{usuario.apellidos}</h2>
         <ul>
             <li>
                 Dni: #{usuario.dni}
@@ -42,12 +34,16 @@
                     <h:column>
                         <f:facet name="header">Pago</f:facet>
                         <h:outputText value="#{pago.value} €" rendered="#{pago.value ne null}" />
-                        <h:outputText value="NO PAGADO" rendered="#{pago.value eq null}" />
+                        <h:outputText value="NO PAGADO" rendered="#{pago.value eq null}" style="color:red;" />
                     </h:column>
                 </h:dataTable>
             </li>
+            <li>
+                Total: #{usuario.calculateTotal()}
+                <h:outputText value="El usuario no está al día con la cuota" rendered="#{usuario.calculateTotal() lt 100.0}" style="color:red;" />
+                <h:outputText value="El usuario está al corriente de pagos" rendered="#{usuario.calculateTotal() ge 100.0}" style="color:green;" />
+            </li>
         </ul>
     </ui:repeat>
-
 </h:body>
 </html>

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Named;
@@ -64,7 +65,7 @@ public class HelloBean implements Serializable {
                 put("junio", 21.0);
                 put("julio", null);
                 put("agosto", 15.4);
-                put("septiembre", 52.4);
+                put("septiembre", 42.4);
                 put("octubre", null);
                 put("noviembre", null);
                 put("diciembre", 9.0);
@@ -129,6 +130,10 @@ public class HelloBean implements Serializable {
 
         public Map<String, Double> getPagos(){
             return pagos;
+        }
+
+        public Double calculateTotal(){
+            return pagos.values().stream().filter(Objects::nonNull).mapToDouble(Double::doubleValue).sum();
         }
     }    
 }
